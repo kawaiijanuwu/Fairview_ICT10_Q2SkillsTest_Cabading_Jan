@@ -25,7 +25,6 @@
         border: 1px solid #334155;
         border-radius: 12px;
         max-width: 550px;
-        width: 100%;
       }
       .btn-tech {
         background-color: #06b6d4;
@@ -40,12 +39,6 @@
         background-color: #0f172a;
         border: 1px solid #475569;
         color: #fff;
-      }
-      .tech-input:focus {
-        background-color: #0f172a;
-        color: #fff;
-        border-color: #06b6d4;
-        box-shadow: 0 0 0 0.25rem rgba(6, 182, 212, 0.25);
       }
       .display-box {
         background-color: #0f172a;
@@ -68,19 +61,21 @@
             <h3 class="fw-bold mb-1 text-info">Non-Metal Elements</h3>
             <p class="text-secondary small mb-4">Periodic Table Information Finder</p>
 
+<!-- this part is the start where AI helped me for design -->
             <!-- the instruction box -->
             <div class="instruction-box p-3 text-start mb-3">
-                <p class="mb-0 small">
+                <p class="mb-0">
                     <strong>Instructions:</strong><br>
-                    Enter the <strong>symbol</strong> of a non-metal element (Example: H, O, Cl, Ne, Xe).
-                    <strong>Note:</strong>
+                    Enter the <strong>symbol</strong> of a non-metal element (Example: H, O, Cl, Ne, Xe). 
+                    <br>
+                    <strong>Note:</strong> This is not case sensitive.
                 </p>
             </div>
 
             <!-- Input Field -->
             <div class="text-start mb-3">
                 <label for="symbolInput" class="form-label small text-light fw-bold">Element Symbol</label>
-                <input type="text" id="symbolInput" class="form-control tech-input" placeholder="Enter symbol...">
+                <input type="text" id="symbolInput" class="form-control tech-input" placeholder="Enter a non-metal symbol...">
             </div>
 
             <!-- action button -->
@@ -99,6 +94,7 @@
                 <p class="mb-0"><strong>Atomic Mass:</strong> <span id="displayMass" class="text-light">-</span></p>
             </div>
         </div>
+<!-- this part is the end where AI help me for design -->
 
     <!-- to pyscript-->
     <script type="py" src="main.py"></script>
