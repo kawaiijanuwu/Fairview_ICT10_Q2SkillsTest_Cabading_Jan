@@ -1,5 +1,5 @@
-from pyscript import document
-# Jan Cabading | 10 Sapphire
+from pyscript import document, display
+# Cabading, Jan | 10S
 
 #List of non-metals stored in a tuple
 nonmetals = {
@@ -27,22 +27,19 @@ nonmetals = {
 
 def search_element(event=None):
     # get user input string from input
-    symbol_input = document.getElementById("symbolInput").value.strip()
+    symbol_input = document.getElementById("symbolInput").value.strip().capitalize()
     
-    # use .get, in "element is not found", added "-" since its a tuple because info in line 39 needs 3 variables
-    info = nonmetals.get(
-        symbol_input, 
-        ("Element is not found!" "-" "-")
-    )
+  # retrieve the tuple using .get as said in the guidelines
+    result = nonmetals.get(symbol_input, ("Element not found", "-", "-"))
     
     # extract details from tuple, to get info 
-    name, atomic_num, atomic_mass = info
+    name, atomic_num, atomic_mass = result
     
-   # Display details to specific target ids
-    display(symbol_input, target="displaySymbol")
-    display(name, target="displayName")
-    display(atomic_num, target="displayNumber")
-    display(atomic_mass, target="displayMass")
+   # display details to specific target ids, used append so that it will not be added but replaced. because append adds another element in a list
+    display(symbol_input, target="displaySymbol", append=False)
+    display(name, target="displayName", append=False)
+    display(atomic_num, target="displayNumber", append=False)
+    display(atomic_mass, target="displayMass", append=False)
 
 
 
