@@ -25,7 +25,7 @@ nonmetals = {
     "Og": ("Oganesson", 118, 294)
 }
 
-def search_element(event=None):
+def search_element(e):
     # get user input string from input
     # used .capitalize to match dictionary keys (ex: from ar to Ar)
     symbol_input = document.getElementById("symbolInput").value.strip().capitalize()
