@@ -6,7 +6,7 @@
     <title>Skills Test</title>
 
     <!-- Cabading, Jan | 10S -->
-    <!-- Note: code is reused from sw1 and drill 2 of quarter 2-->
+    <!-- Note: code is reused from sw1 and drill 2 of Q2-->
     <!-- pyscript -->
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css"/>
     <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
@@ -52,21 +52,55 @@
         border: 1px solid #334155;
         border-radius: 8px;
       }
+      .instruction-box {
+        background-color: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 8px;
+      }
     </style>
 </head>
-</head>
-<!-- centers the container in the very center hoirzontally and vertically -->
+<!-- centers the container in the very center horizontally and vertically -->
 <body class="d-flex align-items-center justify-content-center p-3">
 
 <!-- upper part of the container -->
-    <div class="tech-container p-4 text-center">
-        <h3 class="fw-bold mb-1 text-info">Non-Metal Elements</h3>
-        <p class="text-secondary small mb-4">Periodic Table Information Finder</p>
-        
-<!-- the output, like the one that executes the python functiion -->
-        <div id="result" class="fw-bold fs-6 text-info"></div>
-    </div>
+    <div class="tech-container text-center shadow-lg">
+        <div class="p-4">
+            <h3 class="fw-bold mb-1 text-info">Non-Metal Elements</h3>
+            <p class="text-secondary small mb-4">Periodic Table Information Finder</p>
 
+            <!-- the instruction box -->
+            <div class="instruction-box p-3 text-start mb-3">
+                <p class="mb-0 small">
+                    <strong>Instructions:</strong><br>
+                    Enter the <strong>symbol</strong> of a non-metal element (Example: H, O, Cl, Ne, Xe).
+                    <strong>Note:</strong>
+                </p>
+            </div>
+
+            <!-- Input Field -->
+            <div class="text-start mb-3">
+                <label for="symbolInput" class="form-label small text-light fw-bold">Element Symbol</label>
+                <input type="text" id="symbolInput" class="form-control tech-input" placeholder="Enter symbol...">
+            </div>
+
+            <!-- action button -->
+            <button py-click="search_element" class="btn btn-tech w-100 py-2 mb-4">Check Details</button>
+
+            <!-- result header -->
+            <div class="text-start mb-2">
+                <h6 class="fw-bold text-info mb-0">Result</h6>
+            </div>
+
+            <!-- result display box -->
+            <div class="display-box p-3 text-start">
+                <p class="mb-1"><strong>Symbol:</strong> <span id="displaySymbol" class="text-info">-</span></p>
+                <p class="mb-1"><strong>Element:</strong> <span id="displayName" class="text-light">-</span></p>
+                <p class="mb-1"><strong>Atomic Number:</strong> <span id="displayNumber" class="text-light">-</span></p>
+                <p class="mb-0"><strong>Atomic Mass:</strong> <span id="displayMass" class="text-light">-</span></p>
+            </div>
+        </div>
+
+    <!-- to pyscript-->
     <script type="py" src="main.py"></script>
 </body>
 </html>
